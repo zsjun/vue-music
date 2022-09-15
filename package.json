@@ -6,23 +6,47 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && nohup node backend/prod.server.js &"
   },
   "dependencies": {
+    "@better-scroll/core": "^2.4.2",
+    "@better-scroll/observe-dom": "^2.4.2",
+    "@better-scroll/pull-up": "^2.4.2",
+    "@better-scroll/slide": "^2.4.2",
     "@vueuse/core": "^9.2.0",
+    "axios": "^0.27.2",
+    "core-js": "^3.25.1",
+    "create-keyframe-animation": "^0.1.0",
+    "good-storage": "^1.1.1",
+    "lyric-parser": "^1.0.1",
     "pinia": "^2.0.22",
+    "throttle-debounce": "^5.0.0",
     "vue": "^3.2.37",
-    "vue-router": "^4.1.5"
+    "vue-router": "^4.1.5",
+    "vue3-lazy": "^1.0.0-alpha.1",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.1.0",
+    "@vue/compiler-sfc": "^3.2.39",
+    "@vue/eslint-config-standard": "^8.0.1",
     "autoprefixer": "^10.4.10",
+    "cookie-parser": "^1.4.6",
+    "eslint": "^8.23.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-vue": "^9.4.0",
+    "js-base64": "^3.7.2",
+    "pinyin": "^3.0.0-alpha.5",
     "postcss": "^8.4.16",
     "postcss-import": "^15.0.0",
     "sass": "^1.54.9",
     "tailwindcss": "^3.1.8",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
-    "vue-tsc": "^0.40.4"
+    "vue-tsc": "^0.40.4",
+    "xsrf": "^1.0.0"
   }
 }
