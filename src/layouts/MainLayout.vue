@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { ref, reactive } from "vue";
 </script>
 
@@ -12,4 +12,4 @@ import { ref, reactive } from "vue";
 .box {
   position: relative;
 }
-</style>
+</style> -->

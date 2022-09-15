@@ -1,47 +1,32 @@
+<script setup lang="ts">
+// import HelloWorld from "./components/HelloWorld.vue";
+</script>
+
 <template>
-  <m-header></m-header>
-  <tab></tab>
-  <router-view :style="viewStyle" v-slot="{ Component }">
-    <keep-alive>
-      <component :is="Component"/>
-    </keep-alive>
-  </router-view>
-  <router-view
-    :style="viewStyle"
-    name="user"
-    v-slot="{ Component }"
-  >
-    <transition appear name="slide">
-      <keep-alive>
-        <component :is="Component"/>
-      </keep-alive>
-    </transition>
-  </router-view>
-  <player></player>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/home">About</router-link>
+  </div>
+  <router-view />
+  <!-- <HelloWorld msg="Vite + Vue" /> -->
 </template>
 
-<script>
-  import Header from '@/components/header/header'
-  import Tab from '@/components/tab/tab'
-  import Player from '@/components/player/player'
-  import { mapState } from 'vuex'
-
-  export default {
-    components: {
-      Player,
-      MHeader: Header,
-      Tab
-    },
-    computed: {
-      viewStyle() {
-        const bottom = this.playlist.length ? '60px' : '0'
-        return {
-          bottom
-        }
-      },
-      ...mapState([
-        'playlist'
-      ])
-    }
-  }
-</script>
+<style lang="scss" scoped>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+#nav {
+  padding: 30px;
+}
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
