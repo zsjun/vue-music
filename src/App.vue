@@ -1,32 +1,33 @@
 <script setup lang="ts">
+import { computed } from "vue";
 // import HelloWorld from "./components/HelloWorld.vue";
+import Header from "./components/header/Header.vue";
+import Tab from "./components/tab/tab.vue";
+// import Player from "./components/player/player.vue";
+const playlist = [];
+const viewStyle = computed(() => {
+  return playlist.length ? "60px" : "0";
+});
 </script>
 
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/home">About</router-link>
-  </div>
+  <Header></Header>
+  <Tab></Tab>
+  <router-view :style="viewStyle" v-slot="{ Component }">
+    <keep-alive>
+      <component :is="Component" />
+    </keep-alive>
+  </router-view>
+  <router-view :style="viewStyle" name="user" v-slot="{ Component }">
+    <transition appear name="slide">
+      <keep-alive>
+        <component :is="Component" />
+      </keep-alive>
+    </transition>
+  </router-view>
+  <player></player>
   <router-view />
   <!-- <HelloWorld msg="Vite + Vue" /> -->
 </template>
 
-<style lang="scss" scoped>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<style lang="scss" scoped></style>
