@@ -1,1 +1,7 @@
 backend/sign.js
+.eslintrc.cjs
+vite.config.js
+tailwind.config.cjs
+postcss.config.cjs
+index.html
+env.js
