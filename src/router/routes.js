@@ -1,9 +1,7 @@
-import { RouteRecordRaw } from "vue-router";
-
-const routes: RouteRecordRaw[] = [
+const routes = [
   {
-    path: "/",
-    component: () => import("../views/SampleView.vue"),
+    path: '/',
+    component: () => import('../views/SampleView.vue')
     // children: [
     //   {
     //     name: "Home",
@@ -13,8 +11,8 @@ const routes: RouteRecordRaw[] = [
     // ],
   },
   {
-    path: "/home",
-    component: () => import("../views/SampleView.vue"),
+    path: '/home',
+    component: () => import('../views/SampleView.vue')
     // children: [
     //   {
     //     name: "Home",
@@ -22,7 +20,7 @@ const routes: RouteRecordRaw[] = [
     //     component: () => import("../views/SampleView.vue"),
     //   },
     // ],
-  },
-];
+  }
+]
 
-export default routes;
+export default routes

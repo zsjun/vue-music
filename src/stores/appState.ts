@@ -1,9 +1,9 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
 
-export const useAppState = defineStore("appState", {
+export const useAppState = defineStore('appState', {
   state: () => {
     return {
-      counter: 0,
-    };
-  },
-});
+      counter: 0
+    }
+  }
+})

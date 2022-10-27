@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed } from 'vue'
 // import HelloWorld from "./components/HelloWorld.vue";
-import Header from "./components/header/Header.vue";
-import Tab from "./components/tab/tab.vue";
+import Header from './components/header/Header.vue'
+import Tab from './components/tab/tab.vue'
 // import Player from "./components/player/player.vue";
-const playlist = [];
+const playlist = []
 const viewStyle = computed(() => {
-  return playlist.length ? "60px" : "0";
-});
+  return playlist.length ? '60px' : '0'
+})
 </script>
 
 <template>
